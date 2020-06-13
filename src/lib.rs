@@ -133,4 +133,9 @@ mod tests {
     fn test_should_panic_with_denominator_of_0() {
         let _r1 = Rational::new(2, 0);
     }
+
+    #[test]
+    fn reciprocal_should_work() {
+        assert_eq!(Rational::new(3, 1), Rational::new(1, 3).reciprocal());
+    }
 }

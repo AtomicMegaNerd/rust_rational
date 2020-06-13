@@ -23,4 +23,7 @@ pub fn main() {
     let r10 = Rational::new(117, 444);
     let r11 = r9 + r10;
     println!("{} + {} == {}", r9, r10, r11);
+
+    let r12 = r1.reciprocal();
+    println!("The reciprocal of {} is {}", r1, r12);
 }
