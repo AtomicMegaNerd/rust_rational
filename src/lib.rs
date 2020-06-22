@@ -59,6 +59,9 @@ impl ops::Mul<Rational> for Rational {
     }
 }
 
+// We are using * here on purpose to make the code simpler so silence
+// this warning from Clippy.
+#[allow(clippy::suspicious_arithmetic_impl)]
 impl ops::Div<Rational> for Rational {
     type Output = Self;
     fn div(self, other: Rational) -> Rational {
