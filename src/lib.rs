@@ -29,7 +29,7 @@ impl Rational {
 // Rust does support operator overloading
 impl ops::Add for Rational {
     type Output = Self;
-    fn add(self, other: Rational) -> Self::Output {
+    fn add(self, other: Rational) -> Rational {
         let l = lcm(self.denominator, self.denominator);
         Rational::new(
             (self.numerator * l / self.denominator) + (other.numerator * l / other.denominator),
@@ -40,7 +40,7 @@ impl ops::Add for Rational {
 
 impl ops::Sub for Rational {
     type Output = Self;
-    fn sub(self, other: Rational) -> Self::Output {
+    fn sub(self, other: Rational) -> Rational {
         let l = lcm(self.denominator, other.denominator);
         Rational::new(
             (self.numerator * l / self.denominator) - (other.numerator * l / other.denominator),
@@ -51,7 +51,7 @@ impl ops::Sub for Rational {
 
 impl ops::Mul for Rational {
     type Output = Self;
-    fn mul(self, other: Rational) -> Self::Output {
+    fn mul(self, other: Rational) -> Rational {
         Rational::new(
             self.numerator * other.numerator,
             self.denominator * other.denominator,
@@ -64,7 +64,7 @@ impl ops::Mul for Rational {
 #[allow(clippy::suspicious_arithmetic_impl)]
 impl ops::Div for Rational {
     type Output = Self;
-    fn div(self, other: Rational) -> Self::Output {
+    fn div(self, other: Rational) -> Rational {
         self * other.reciprocal()
     }
 }
