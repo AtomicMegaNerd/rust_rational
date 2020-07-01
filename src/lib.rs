@@ -2,6 +2,9 @@ use std::fmt;
 use std::fmt::Display;
 use std::ops;
 
+///
+/// Rational is a type that represents rational numbers.
+///
 #[derive(Debug, Eq, PartialEq, Copy, Clone)]
 pub struct Rational {
     pub numerator: i64,
