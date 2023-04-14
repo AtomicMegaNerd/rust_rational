@@ -16,9 +16,10 @@
             buildInputs = with pkgs;
               [
                 rustup
+                libiconv
                 rust-analyzer
-                rustfmt
               ];
+            RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
           };
       });
 }
