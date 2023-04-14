@@ -15,14 +15,10 @@
             # The packages we need for this project
             buildInputs = with pkgs;
               [
-                rustc
-                cargo
-                clippy
-                libiconv
+                rustup
                 rust-analyzer
                 rustfmt
               ];
-            RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
           };
       });
 }
